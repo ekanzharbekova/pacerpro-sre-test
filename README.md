@@ -32,4 +32,4 @@ Use the query from sumo_logic_query.txt and set webhook to the Lambda URL output
 curl -X POST "your-lambda-url" -d '{"test": true}'
 
 # Cleanup
-bashterraform destroy -auto-approve
+terraform destroy -auto-approve
