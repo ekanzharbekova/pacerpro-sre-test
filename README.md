@@ -3,6 +3,7 @@ Monitors API response times and automatically restarts EC2 instances when perfor
 
 
 #!/bin/bash
+
 zip lambda_function.zip lambda_function.py
 mv lambda_function.zip terraform/
 
@@ -12,7 +13,7 @@ terraform init
 terraform apply -auto-approve
 
 # 3. Get webhook URL for Sumo Logic
-#!/bin/bash
+
 terraform output lambda_function_url
 
 
@@ -27,6 +28,7 @@ Use the query from sumo_logic_query.txt and set webhook to the Lambda URL output
 # Test
 
 #!/bin/bash
+
 curl -X POST "your-lambda-url" -d '{"test": true}'
 
 # Cleanup
